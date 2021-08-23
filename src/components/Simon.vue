@@ -113,20 +113,21 @@ export default {
 
       for (let i = 0; i < this.playerSequence.length; i++) {
         if (this.playerSequence[i] !== this.sequence[i]) {
+          this.gameText = "Вы проиграли";
+          this.isClickabel = false;
+
           const errorSound = new Audio(soundError);
 
           errorSound.volume = 0.4;
           errorSound.play();
-
-          this.gameText = "Вы проиграли";
         } else if (this.playerSequence.length === this.sequence.length) {
           if (this.round === 15) {
+            this.gameText = "Победа!";
+            this.isClickabel = false;
+
             const winSound = new Audio(soundWin);
 
             winSound.play();
-
-            this.gameText = "Победа!";
-            this.isClickabel = false;
 
             setTimeout(() => {
               this.controlBtn = "Новая игра";
