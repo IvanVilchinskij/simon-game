@@ -66,12 +66,7 @@ export default {
         3: false,
         4: false,
       },
-      sounds: {
-        1: new Audio(soundGreen),
-        2: new Audio(soundRed),
-        3: new Audio(soundYellow),
-        4: new Audio(soundBlue),
-      },
+      sounds: [soundGreen, soundRed, soundYellow, soundBlue],
     };
   },
   watch: {
@@ -102,7 +97,9 @@ export default {
       }
     },
     playSound(i) {
-      this.sounds[i].play();
+      let sound = new Audio(this.sounds[i - 1]);
+
+      sound.play();
     },
     setActiveClass(i) {
       this.isActive[i] = true;
