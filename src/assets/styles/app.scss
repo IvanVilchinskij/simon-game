@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+#app {
+    font-family: Helvetica, Arial, sans-serif;
+    width: 100%;
+    background-color: $bg-color;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+
+.container {
+    @include flex-column-center();
+}
+
+.game-info {
+    @include flex-column-center();
+    
+    @media (max-width: 575px) {
+        margin-bottom: 2rem;
+    }
+}

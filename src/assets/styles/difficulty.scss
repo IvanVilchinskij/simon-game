@@ -1,0 +1,66 @@
+.difficulty {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    width: 25.875em;
+    padding: 2em;
+    background-color: $game-bg;
+    padding: 2em 1em;
+    border-radius: .3em;
+
+    @media (max-width: 575px) {
+        font-size: .75rem;
+    }
+
+    &__text {
+        color: $text-color;
+    }
+
+    &__btns-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 55%;
+    }
+
+    &__btn {
+        outline: none;
+        border: none;
+        font-size: .875rem;
+        color: $text-color;
+        padding: .25em .5em;
+        border-radius: .3em;
+        cursor: pointer;
+
+        @media (max-width: 575px) {
+            font-size: .625rem;
+        }
+
+        &--green {
+            background-color: $green;
+
+            &.active {
+                background-color: lighten($green, 20%);
+                box-shadow: 0 0 .5em lighten($green, 20%);
+            }
+        }
+
+        &--blue {
+            background-color: $blue;
+
+            &.active {
+                background-color: lighten($blue, 20%);
+                box-shadow: 0 0 .5em lighten($blue, 20%);
+            }
+        }
+
+        &--red {
+            background-color: $red;
+
+            &.active {
+                background-color: lighten($red, 20%);
+                box-shadow: 0 0 .5em lighten($red, 20%);
+            }
+        }
+    }
+}

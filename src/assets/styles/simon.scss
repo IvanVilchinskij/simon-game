@@ -1,0 +1,120 @@
+.simon {
+    @include flex-column-center();
+    margin: 10vh 0 2rem;
+
+    @media (max-width: 767px) {
+        margin: 5vh 0 2rem;
+    }
+
+    &__game {
+        font-size: 1rem;
+        padding: 2em;
+        border-radius: 50%;
+        background-color: $game-bg;
+        margin-bottom: 2em;
+
+        @media (max-width: 575px) {
+            font-size: .75rem;
+        }
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        font-size: 1rem;
+        width: 21.875em;
+        height:  21.875em;    
+        border-radius: 50%;
+        overflow: hidden;
+
+        @media (max-width: 575px) {
+            font-size: .75rem;
+        }
+    }
+
+    &__quadrant {
+        font-size: 1rem;
+        width: 10.1875em;
+        height: 10.1875em;
+
+        cursor: pointer;
+
+        @media (max-width: 575px) {
+            font-size: .75rem;
+        }
+
+        &--green {
+            background-color: $green;
+            margin-bottom: 1.5em;
+
+            &.active {
+                background-color: lighten($green, 25%);
+            }
+        }
+
+        &--red {
+            background-color: $red;
+            margin-bottom: 1.5em;
+
+            &.active {
+                background-color: lighten($red, 25%);
+            }
+        }
+
+        &--blue {
+            background-color: $blue;
+
+            &.active {
+                background-color: lighten($blue, 25%);
+            }
+        }
+
+        &--yellow {
+            background-color: $yellow;
+
+            &.active {
+                background-color: lighten($yellow, 25%);
+            }
+        }
+    }
+
+    &__control-bar {
+        font-size: 1rem;
+        width: calc((21.875em + 4em) / 1.5);
+        background-color: $game-bg;
+        padding: 2em 1em;
+        border-radius: .3em;
+
+        color: $text-color;
+
+        @media (max-width: 575px) {
+            font-size: .75rem;
+        }
+    }
+
+    &__game-text, &__score  {
+        text-align: center;
+    }
+
+    &__game-text {
+        margin-bottom: 0.5em;
+    }
+
+    &__score {
+        margin-bottom: 1.5em;
+    }
+
+    &__btn {
+        outline: none;
+        width: 100%;
+        font-size: 1.125em;
+        padding: .44em 0;
+        border: none;
+        color: $text-color;
+        background-color: $bg-color;
+        border-radius: .44em;
+        
+        cursor: pointer;
+    }
+}
