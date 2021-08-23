@@ -123,7 +123,7 @@ export default {
 
           this.gameText = "Вы проиграли";
         } else if (this.playerSequence.length === this.sequence.length) {
-          if (this.round === 4) {
+          if (this.round === 15) {
             const winSound = new Audio(soundWin);
 
             winSound.play();

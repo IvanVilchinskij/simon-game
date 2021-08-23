@@ -1,6 +1,7 @@
 .simon {
     @include flex-column-center();
     margin: 10vh 0 2rem;
+    user-select: none;
 
     @media (max-width: 767px) {
         margin: 5vh 0 2rem;
