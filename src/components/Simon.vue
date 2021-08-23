@@ -51,6 +51,7 @@ export default {
       controlBtn: "Начать",
       gameText: "Simon the game",
       isClickabel: false,
+      isWrong: false,
       difficultyDurations: {
         easy: 1500,
         normal: 1000,
@@ -79,6 +80,7 @@ export default {
       this.controlBtn = "Начать";
       this.sequence = [];
       this.playerSequence = [];
+      this.isWrong = false;
       this.round = 1;
       this.gameText = "Simon the game";
       clearInterval(this.sequenceInterval);
@@ -90,10 +92,13 @@ export default {
     },
     clickBtn(i) {
       if (this.isClickabel) {
-        this.playSound(i);
-        this.setActiveClass(i);
         this.playerSequence.push(i);
         this.checkWinOrLose();
+
+        this.setActiveClass(i);
+        if (!this.isWrong) {
+          this.playSound(i);
+        }
       }
     },
     playSound(i) {
@@ -114,6 +119,7 @@ export default {
       for (let i = 0; i < this.playerSequence.length; i++) {
         if (this.playerSequence[i] !== this.sequence[i]) {
           this.gameText = "Вы проиграли";
+          this.isWrong = true;
           this.isClickabel = false;
 
           const errorSound = new Audio(soundError);
